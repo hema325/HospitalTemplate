@@ -1,0 +1,48 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#services {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+
+        article {
+            @include gradient-background;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            transition: all 400ms ease;
+            height: fit-content;
+
+            &:hover {
+                transform: translateY(-.5rem);
+            }
+
+            i {
+                font-size: 1.7rem;
+            }
+
+            div {
+                h4 {
+                    margin-bottom: 1.5rem;
+
+                    @media (max-width: $breakpoint-md) {
+                        margin-bottom: .8rem;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint-lg) {
+            padding: 1.2rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

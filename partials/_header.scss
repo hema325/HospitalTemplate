@@ -1,0 +1,42 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+header {
+    @include gradient-background;
+    height: 100vh;
+
+    .container {
+        height: 100%;
+        padding-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8%;
+
+        .content {
+            max-width: 46%;
+
+            h1 {
+                font-size: 3.5rem;
+                line-height: 1.2;
+                letter-spacing: -3px;
+            }
+
+            p {
+                margin: 1rem 0 2rem;
+                color: $light-color;
+                font-size: 1.1rem;
+            }
+
+            @media (max-width: $breakpoint-lg) {
+                max-width: 100%;
+            }
+        }
+
+        .image {
+            @media (max-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+    }
+}

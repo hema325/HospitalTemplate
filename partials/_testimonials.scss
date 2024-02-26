@@ -1,0 +1,35 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#testimonials {
+    .container {
+        article {
+            @include gradient-background;
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            font-size: .9rem;
+
+            .patient {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1.5rem;
+
+                img {
+                    width: 2.5rem;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                }
+            }
+
+            @media (max-width:$breakpoint-md) {
+                padding: 1.5rem;
+            }
+        }
+
+
+        swiper-slide {
+            margin-bottom: 4rem;
+        }
+    }
+}
